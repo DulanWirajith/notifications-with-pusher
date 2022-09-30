@@ -45,17 +45,18 @@ export default function Notifications() {
       },
     });
 
-    const channel = pusher.subscribe(`presence-${userId}`);
+    const channel = pusher.subscribe(`private-${userId}`);
+
+    channel.bind("pusher:subscription_succeeded", (members: any) => {
+      getNotifications();
+    });
+
     channel.bind("new_notification", (data: any) => {
       setNotifications(prestate => [data, ...prestate])
     });
 
-    channel.bind("pusher:subscription_succeeded", (members: any) => {
-      getNotifications(); 
-    });
-
     return () => {
-      pusher.unsubscribe(`presence-${userId}`);
+      pusher.unsubscribe(`private-${userId}`);
     };
   }, []);
 
