@@ -45,7 +45,7 @@ export default function Notifications() {
       },
     });
 
-    const channel = pusher.subscribe(`private-${userId}`);
+    const channel = pusher.subscribe(`private-notifications-${userId}`);
 
     channel.bind("pusher:subscription_succeeded", (members: any) => {
       getNotifications();
@@ -56,7 +56,7 @@ export default function Notifications() {
     });
 
     return () => {
-      pusher.unsubscribe(`private-${userId}`);
+      pusher.unsubscribe(`private-notifications-${userId}`);
     };
   }, []);
 
