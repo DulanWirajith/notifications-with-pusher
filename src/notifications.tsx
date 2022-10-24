@@ -7,8 +7,7 @@ export default function Notifications() {
   const [newNotificationCount, setNewNotificationCount] = useState(0);
   const userId = "39fd824c-4b63-4de5-97b5-407965d70106";
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImUuYW5hZG9sQGdtYWlsLmNvbSIsImlhdCI6MTY2NDI2MTgwMiwiZXhwIjoxNjY2MjcxODAyfQ.iOQc5HskVyC8ZY-YqIhIgjKJLep3CGqg370fB_xiJNE";
-
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImUuYW5hZG9sQGdtYWlsLmNvbSIsImlhdCI6MTY2NjYwNzM4MiwiZXhwIjoxNjY3OTAzMzgyfQ.IMz3g1Lj4oC5Bw64QnyWjRc_hJZMgqSJ7VcukkaCkFAo"
   const getNotifications = () => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
